@@ -1,0 +1,51 @@
+Inside that directory, you can run several commands:
+
+Install Playwright:
+    npm init playwright@latest
+
+    Allows you to run:
+     npx playwright test          ...Runs the end-to-end tests.
+     npx playwright test --ui     ...Starts the interactive UI mode.
+     npx playwright test --project=chromium      ...Runs the tests only on Desktop Chrome.
+     npx playwright test example              ...Runs the tests in a specific file.
+     npx playwright test --debug              ...Runs the tests in debug mode.
+     npx playwright codegen                   ...Auto generate tests with Codegen.
+     npx playwright show-report               ...Shows the test report.
+
+     We suggest that you begin by typing:
+            npx playwright test
+
+how to install playwright test runner and setup playwright dependencies.
+    npm install playwright --save-dev
+
+    npm install @playwright/test --save-dev
+
+    npm install typescript --save-dev
+
+    npx tsc --init                   //creates tsvonfig.json
+
+install Web browsers deps for Index files  (if not done as part of playwright init i.e. npm init playwright@latest)
+    npx playwright install
+    npx playwright install-deps
+    npx playwright install-deps --chromium
+    npx playwright install-deps --firefox
+    npx playwright install-deps --webkit
+    npx playwright install-deps --all
+    npx playwright install-deps --edge
+    npx playwright install-deps --msedge
+    OR
+    npx playwright install-deps --chromium --edge --firefox --webkit
+    npm init playwright@latest -- --quiet --browser=chromium --browser=firefox --browser=webkit
+
+
+change default Error Timeout //Default is 30000 i.e. 30s 
+    1. Use global actionTimeout ...applies timeout to all test steps 
+        test.use({actionTimeout:10000})
+    2. Set independent timeout at each test step 
+        page.setDefaultTimeout(10000);   
+    3. Use method level timeout
+        page.Locators(element).click({timeout:5000})  
+
+FINDING ELEMENTS
+1. use Locators
+1. use getBy

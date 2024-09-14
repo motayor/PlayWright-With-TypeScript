@@ -1,0 +1,11 @@
+REUSING Functions
+1. Custom Functions
+You can create a custom function for interacting with the datepicker and export this function to use it across different test files.
+
+2. Playwright Fixtures
+Playwright fixtures allow you to extend the test context with custom functionalities. You can create a fixture that adds a method to the page or context objects for selecting a date.
+
+3. Helper Classes
+For complex interactions, encapsulate the logic in a class.
+
+
